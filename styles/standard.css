@@ -19,5 +19,12 @@ flex-direction: column;
 .content_restaurant_category{
 width: calc(100% - 300px);
 padding: 16px;
-border: 2px solid blue;
+}
+.addBtnClass{
+width: 100%;
+border: none;
+background-color: rgb(170, 185, 212);
+}
+.content_menu{
+display: flex;
 }

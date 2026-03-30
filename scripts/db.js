@@ -72,3 +72,5 @@ let myDishes = [
         "amount":0,
     }
 ]
+
+let basketDishes = [];
