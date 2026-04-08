@@ -1,19 +1,19 @@
 function getMenuTemplate(index){
     return`
-    
-    <button id="addBtn" class="addBtnClass" onclick="addToBasket(${index})">
+    <button id="addBtn" class="addBtnClass" onclick="addToCart(${index})">
         <div class="content_menu">${myDishes[index].name}</div>
         <div class="content_menu">${myDishes[index].price}</div>
         <div class="content_menu">${myDishes[index].ingredients}</div>
     </button>
     <hr>`
 }
-
 function getBasketTemplate(indexBasket){
-return`
-    <div class="content_menu">${basketDishes[indexBasket].name}</div>
-    <div class="content_menu">${basketDishes[indexBasket].price}</div>
-    <div class="content_menu">${basketDishes[indexBasket].amount}</div>
-    <button id="trash_Btn" class="trash_Btn" onclick="deleteItem(${indexBasket})">X</button>
+    return`
+        <div id="bas_dish_nme">${basketDishes[indexBasket].name}</div>
+        <div id="bas_dish_prce">${basketDishes[indexBasket].price}</div>
+        <div id="bas_dish_amnt">${basketDishes[indexBasket].amount}</div>
+    <button onclick="deleteBtn(${indexBasket})">X</button>
     <hr>`
 }
+
+

@@ -5,20 +5,31 @@ function renderMenu(){
         contentRef.innerHTML += getMenuTemplate(index);
     }
 }
+
 function renderBasketMenu(){
-    let basketRef = document.getElementById("basket_standard");
-        basketRef.innerHTML = "";
+     let basketRef = document.getElementById("basket_standard");
+         basketRef.innerHTML = "";
     for(let indexBasket = 0; indexBasket < basketDishes.length; indexBasket++){
-        basketRef.innerHTML += getBasketTemplate(indexBasket);
+         basketRef.innerHTML += getBasketTemplate(indexBasket);
     }
 }
-function addToBasket(index){
-    basketDishes.push(myDishes[index]);
-    renderBasketMenu();
-    return basketDishes;
+function addToCart(index){
+    let foundDish = basketDishes.find((dish) => dish.name == myDishes[index].name);
+    if(foundDish){
+         foundDish.amount++;
+        renderBasketMenu();
+    } else{
+        basketDishes.push({
+        "name" : myDishes[index].name,
+        "price": myDishes[index].price,
+        "amount": 1,
+        })
+    } 
+        renderBasketMenu();
 }
 
-function deleteItem(indexBasket){
+
+function deleteBtn(indexBasket){
     basketDishes.splice(indexBasket, 1);
     renderBasketMenu();
 }
