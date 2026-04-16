@@ -15,5 +15,11 @@ function getBasketTemplate(indexBasket){
     <button onclick="deleteBtn(${indexBasket})">X</button>
     <hr>`
 }
-
-
+function getCheckOutTemplate(){
+    return`
+        <div>${basketSum} €</div>
+        <div>delivery-price</div>
+        <hr>
+        <button>Pay ${basketSum} €</button>
+        `
+}
