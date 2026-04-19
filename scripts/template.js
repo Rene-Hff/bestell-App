@@ -10,16 +10,16 @@ function getMenuTemplate(index){
 function getBasketTemplate(indexBasket){
     return`
         <div id="bas_dish_nme">${basketDishes[indexBasket].name}</div>
-        <div id="bas_dish_prce">${basketDishes[indexBasket].price}</div>
-        <div id="bas_dish_amnt">${basketDishes[indexBasket].amount}</div>
+        <div id="bas_dish_prce">${basketDishes[indexBasket].price} €</div>
+        <div id="bas_dish_amnt">${basketDishes[indexBasket].amount}x</div>
     <button onclick="deleteBtn(${indexBasket})">X</button>
     <hr>`
 }
 function getCheckOutTemplate(){
     return`
         <div>${basketSum} €</div>
-        <div>delivery-price</div>
+        <div>+5€ Delivery</div>
         <hr>
-        <button>Pay ${basketSum} €</button>
+        <button> Pay ${totalPrice()}€</button>
         `
 }

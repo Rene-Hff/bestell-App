@@ -1,4 +1,5 @@
 let basketSum;
+let total;
 
 function renderMenu(){
     let contentRef = document.getElementById("content_category")
@@ -19,17 +20,15 @@ function renderBasketMenu(){
     for(let indexBasket = 0; indexBasket < basketDishes.length; indexBasket++){
         basketRef.innerHTML += getBasketTemplate(indexBasket);
     }
+    renderPrice()
     renderCheckOut();
 }
-
-
-
-
 function renderCheckOut(indexBasket){
     let checkOut = document.getElementById("checkOutContainer")
         checkOut.innerHTML = getCheckOutTemplate();
 }
-function increasePrice(){
+    
+function renderPrice(){
    basketSum = 0;
     for(let basketIndex = 0; basketIndex < basketDishes.length; basketIndex++){
         let singleBasketDish = basketDishes[basketIndex];
@@ -38,24 +37,27 @@ function increasePrice(){
     basketSum = basketSum.toFixed(2);
 }
 
-
+function totalPrice(){
+    let delPrice = "5";
+        total = Number(basketSum) + Number(delPrice);
+    return total.toFixed(2);
+}
 
 function addToCart(index){
     let foundDish = basketDishes.find((dish) => dish.name == myDishes[index].name);
     if(foundDish){
        foundDish.amount++;
-    increasePrice();
+    renderPrice();
     renderBasketMenu();
     } else{
         basketDishes.push({
         "name" : myDishes[index].name,
-        "price": myDishes[index].price,
+        "price": myDishes[index].price.toFixed(2),
         "amount": 1,
     })} 
-    increasePrice();
+    renderPrice();
     renderBasketMenu();
 }
-
 
 function deleteBtn(indexBasket){
     basketDishes.splice(indexBasket, 1);
