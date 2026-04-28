@@ -1,5 +1,7 @@
+let dishPriceVar;
 let basketSum;
 let total;
+let delPrice = "5";
 
 function renderMenu(){
     let contentRef = document.getElementById("content_category")
@@ -14,16 +16,21 @@ function renderEmptyBasket(){
         emBasket.innerHTML =` <h3>Your Basket</h3>
         <p>Add somthing delicious!</p>`
 }
-function renderBasketMenu(){
+function renderBasketMenu(indexBasket){
     let basketRef = document.getElementById("basket_standard");
         basketRef.innerHTML = "";
+
     for(let indexBasket = 0; indexBasket < basketDishes.length; indexBasket++){
         basketRef.innerHTML += getBasketTemplate(indexBasket);
     }
+    if(basketDishes.length == 0){
+        renderEmptyBasket()
+        hideCeckOut();
+    } 
     renderPrice()
     renderCheckOut();
 }
-function renderCheckOut(indexBasket){
+function renderCheckOut(indexBasket){ 
     let checkOut = document.getElementById("checkOutContainer")
         checkOut.innerHTML = getCheckOutTemplate();
 }
@@ -37,10 +44,18 @@ function renderPrice(){
     basketSum = basketSum.toFixed(2);
 }
 
-function totalPrice(){
-    let delPrice = "5";
-        total = Number(basketSum) + Number(delPrice);
-    return total.toFixed(2);
+function increaseBasketButton(indexBasket){
+    if(basketDishes) basketDishes[indexBasket].amount++;
+    renderPrice();
+    renderBasketMenu();
+}
+function decreaseBasketButton(indexBasket){
+    if(basketDishes[indexBasket].amount ==1 && decreaseBasketButton) {
+    deleteBtn(indexBasket);
+    }
+    else if(basketDishes) basketDishes[indexBasket].amount--;
+    renderPrice();
+    renderBasketMenu();
 }
 
 function addToCart(index){
@@ -59,6 +74,18 @@ function addToCart(index){
     renderBasketMenu();
 }
 
+function dishPrices(indexBasket){
+    dishPriceVar = basketDishes[indexBasket].price * basketDishes[indexBasket].amount;
+    return dishPriceVar.toFixed(2);
+}
+
+function totalPrice(){
+    total = Number(basketSum) + Number(delPrice);
+    return total.toFixed(2);
+}
+function hideCeckOut(){
+    document.getElementById("checkOutContainer").style.display = "none";
+}
 function deleteBtn(indexBasket){
     basketDishes.splice(indexBasket, 1);
     renderBasketMenu();
