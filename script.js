@@ -11,25 +11,29 @@ function renderMenu(){
     }
     renderEmptyBasket();
 }
+
 function renderEmptyBasket(){
     let emBasket = document.getElementById("basket_standard")
         emBasket.innerHTML =` <h3>Your Basket</h3>
-        <p>Add somthing delicious!</p>`
+        <p>Nothing here yet.Go ahead and choose something delicious!</p>`
 }
+
 function renderBasketMenu(indexBasket){
     let basketRef = document.getElementById("basket_standard");
         basketRef.innerHTML = "";
-
     for(let indexBasket = 0; indexBasket < basketDishes.length; indexBasket++){
         basketRef.innerHTML += getBasketTemplate(indexBasket);
     }
-    if(basketDishes.length == 0){
-        renderEmptyBasket()
-        hideCeckOut();
-    } 
-    renderPrice()
+    if(basketDishes.length != 0){
+        document.getElementById("checkOutContainer").style.display = "block";
+    } else{
+        document.getElementById("checkOutContainer").style.display = "none";
+        renderEmptyBasket();
+    }
     renderCheckOut();
+    renderPrice();
 }
+
 function renderCheckOut(indexBasket){ 
     let checkOut = document.getElementById("checkOutContainer")
         checkOut.innerHTML = getCheckOutTemplate();
@@ -39,23 +43,24 @@ function renderPrice(){
    basketSum = 0;
     for(let basketIndex = 0; basketIndex < basketDishes.length; basketIndex++){
         let singleBasketDish = basketDishes[basketIndex];
-        basketSum += singleBasketDish.price*singleBasketDish.amount;
+    basketSum += singleBasketDish.price*singleBasketDish.amount;
     }
     basketSum = basketSum.toFixed(2);
 }
 
 function increaseBasketButton(indexBasket){
     if(basketDishes) basketDishes[indexBasket].amount++;
-    renderPrice();
-    renderBasketMenu();
+        renderPrice();
+        renderBasketMenu();
 }
+
 function decreaseBasketButton(indexBasket){
     if(basketDishes[indexBasket].amount ==1 && decreaseBasketButton) {
-    deleteBtn(indexBasket);
+        deleteBtn(indexBasket);
     }
     else if(basketDishes) basketDishes[indexBasket].amount--;
-    renderPrice();
-    renderBasketMenu();
+        renderPrice();
+        renderBasketMenu();
 }
 
 function addToCart(index){
@@ -80,12 +85,21 @@ function dishPrices(indexBasket){
 }
 
 function totalPrice(){
+    if(basketDishes == 0){
+    total = Number(basketSum);
+    } else{
     total = Number(basketSum) + Number(delPrice);
-    return total.toFixed(2);
+    } return total.toFixed(2);
 }
-function hideCeckOut(){
+
+function openDialog(){
+    let dialogRef = document.getElementById("dialogMessage");
+    dialogRef.showModal();
+    renderEmptyBasket();
     document.getElementById("checkOutContainer").style.display = "none";
 }
+
+
 function deleteBtn(indexBasket){
     basketDishes.splice(indexBasket, 1);
     renderBasketMenu();

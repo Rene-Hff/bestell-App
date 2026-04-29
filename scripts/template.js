@@ -1,10 +1,11 @@
 function getMenuTemplate(index){
     return`
-    <button id="addBtn" class="addBtnClass" onclick="addToCart(${index})">
+    <div id="addBtn" class="addBtnClass">
         <div class="content_menu">${myDishes[index].name}</div>
         <div class="content_menu">${myDishes[index].price.toFixed(2)}€</div>
         <div class="content_menu">${myDishes[index].ingredients}</div>
-    </button>
+    <button onclick="addToCart(${index})">Add to cart</button>
+    </div>
     <hr>`
 }
 function getBasketTemplate(indexBasket){
@@ -22,7 +23,7 @@ function getCheckOutTemplate(){
         <div>+5€ Delivery</div>
         <div>${totalPrice()}€</div>
         <hr>
-        <button>Pay</button>
+        <button onclick="openDialog()">Pay${totalPrice()}€</button>
     </div>
     `
 }
