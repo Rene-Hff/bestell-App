@@ -96,7 +96,8 @@ function openDialog(){
     let dialogRef = document.getElementById("dialogMessage");
     dialogRef.showModal();
     renderEmptyBasket();
-    document.getElementById("checkOutContainer").style.display = "none";
+    basketDishes = [];
+    renderBasketMenu();
 }
 
 

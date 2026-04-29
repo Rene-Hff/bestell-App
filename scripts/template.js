@@ -23,7 +23,7 @@ function getCheckOutTemplate(){
         <div>+5€ Delivery</div>
         <div>${totalPrice()}€</div>
         <hr>
-        <button onclick="openDialog()">Pay${totalPrice()}€</button>
+        <button onclick="openDialog()">Buy now (${totalPrice()}€)</button>
     </div>
     `
 }
