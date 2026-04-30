@@ -1,17 +1,62 @@
 .basket_stickyrail{
-padding: 16px;
 width: 300px;
 flex-grow: 1;
-border: 2px solid black;
-background-color: bisque;
+background-color: beige;
 }
 .basket_content{
 width: 100%;
 height: 400px;
 position: sticky;
 top: 0;
-background-color: cadetblue;
+background-color: rgb(19, 19, 19);
+color: whitesmoke;
+overflow: scroll;
+}
+#basket_standard{
+padding: 16px;
+display: flex;
+flex-direction: column;
+align-items: center;
 }
 #checkOutContainer{
-background-color: cadetblue;
+background-color: rgb(19, 19, 19);
+position: sticky;
+top: 390px;
+height: 88px;
+color: whitesmoke;
+}
+.checkOutBox{
+display: flex;
+flex-direction: column;
+align-items: flex-end;
+padding-right: 16px;
+}
+#bas_dish_nme{
+background-color: beige;
+color: black;
+padding: 4px;
+width: 100%;
+}
+#bas_dish_prce{
+background-color: beige;
+color: black;
+padding: 4px;
+width: 100%;
+}
+#bas_dish_btns{
+background-color: beige;
+color: black;
+padding: 4px;
+width: 100%;
+margin-bottom: 8px;
+}
+#minusBtn{
+background: none;
+border: none;
+cursor: pointer;
+}
+#plusBtn{
+background: none;
+border: none;
+cursor: pointer;
 }
