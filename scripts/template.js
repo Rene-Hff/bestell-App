@@ -22,11 +22,10 @@ function getBasketTemplate(indexBasket){
 function getCheckOutTemplate(){
     return`
     <div class="checkOutBox">
-        <div>${basketSum} €</div>
-        <div>+5€ Delivery</div>
-        <div>${totalPrice()}€</div>
-        <hr>
-        <button onclick="openDialog()">Buy now (${totalPrice()}€)</button>
+        <div class="subtotal">Subtotal ${basketSum} €</div>
+        <div class="delFee">Delivery fee +5€</div>
+        <div class="total">Total ${totalPrice()}€</div>
+        <button id="payBtn" onclick="openDialog()">Buy now (${totalPrice()}€)</button>
     </div>
     `
 }
