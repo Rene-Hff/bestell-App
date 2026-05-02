@@ -9,13 +9,14 @@ function renderMenu(){
     for(let index = 0; index < myDishes.length; index++){        
         contentRef.innerHTML += getMenuTemplate(index);
     }
-    renderEmptyBasket();
+        renderEmptyBasket();
 }
 
 function renderEmptyBasket(){
     let emBasket = document.getElementById("basket_standard")
         emBasket.innerHTML =` <h3>Your Basket</h3>
-        <p>Nothing here yet.Go ahead and choose something delicious!</p>`
+        <p>Nothing here yet.Go ahead and choose something delicious!</p>
+        <img class="cart_icon" src="/icons+imgs/shopping_cart.svg" alt="cart_icon">`
 }
 
 function renderBasketMenu(indexBasket){
@@ -30,8 +31,8 @@ function renderBasketMenu(indexBasket){
         document.getElementById("checkOutContainer").style.display = "none";
         renderEmptyBasket();
     }
-    renderCheckOut();
-    renderPrice();
+        renderCheckOut();
+        renderPrice();
 }
 
 function renderCheckOut(indexBasket){ 
@@ -67,16 +68,16 @@ function addToCart(index){
     let foundDish = basketDishes.find((dish) => dish.name == myDishes[index].name);
     if(foundDish){
        foundDish.amount++;
-    renderPrice();
-    renderBasketMenu();
+        renderPrice();
+        renderBasketMenu();
     } else{
         basketDishes.push({
         "name" : myDishes[index].name,
         "price": myDishes[index].price.toFixed(2),
         "amount": 1,
     })} 
-    renderPrice();
-    renderBasketMenu();
+        renderPrice();
+        renderBasketMenu();
 }
 
 function dishPrices(indexBasket){
@@ -86,17 +87,17 @@ function dishPrices(indexBasket){
 
 function totalPrice(){
     if(basketDishes == 0){
-    total = Number(basketSum);
+        total = Number(basketSum);
     } else{
-    total = Number(basketSum) + Number(delPrice);
+        total = Number(basketSum) + Number(delPrice);
     } return total.toFixed(2);
 }
 
 function openDialog(){
     let dialogRef = document.getElementById("dialogMessage");
-    dialogRef.showModal();
+        dialogRef.showModal();
     renderEmptyBasket();
-    basketDishes = [];
+        basketDishes = [];
     renderBasketMenu();
 }
 

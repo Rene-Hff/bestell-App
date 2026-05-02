@@ -1,75 +1,96 @@
 .basket_stickyrail{
 width: 300px;
 flex-grow: 1;
-background-color: beige;
+background-color: var(--primary-background-color);
 }
+
 .basket_content{
 width: 100%;
 height: 400px;
 position: sticky;
 top: 0;
-background-color: rgb(19, 19, 19);
-color: whitesmoke;
+background-color: var(--primary-color);
+color: var(--secondary-color);
 overflow:auto;
 }
+
 #basket_standard{
 padding: 16px;
 display: flex;
 flex-direction: column;
 align-items: center;
+justify-content: center;
+border-radius: 6px 0px 0px 0px;
 }
+
 #checkOutContainer{
-background-color: rgb(19, 19, 19);
+background-color: var(--primary-color);
 position: sticky;
 top: 390px;
-color: whitesmoke;
+color: var(--secondary-color);
+border-radius: 0px 0px 0px 6px;
 }
+
 .checkOutBox{
 display: flex;
 flex-direction: column;
 align-items: flex-end;
 padding: 16px;
 }
+
 #bas_dish_nme{
-background-color: beige;
-color: black;
+background-color:var(--primary-background-color);
+color: var(--primary-color);
 padding: 4px;
 width: 100%;
 }
+
 #bas_dish_prce{
-background-color: beige;
-color: black;
+background-color: var(--primary-background-color);
+color: var(--primary-color);
 padding: 4px;
 width: 100%;
 }
+
 #bas_dish_btns{
-background-color: beige;
-color: black;
+background-color: var(--primary-background-color);
+color: var(--primary-color);
 padding: 4px;
 width: 100%;
 margin-bottom: 8px;
 }
+
+#delBtn{
+cursor: pointer;
+background-color: var(--box-background-color);
+}
+
 #payBtn{
 width: 100%;
 padding: 4px;
+border: none;
 border-radius: 10px;
-color: whitesmoke;
-background-color: orange;
+color: var(--secondary-color);
+background-color: var(--section-bg-color);
 }
+
 #minusBtn{
 background: none;
 border: none;
 cursor: pointer;
 }
+
 #plusBtn{
 background: none;
 border: none;
 cursor: pointer;
 }
+
 .delFee{
-border-bottom: 1px solid whitesmoke;
+border-bottom: 1px solid var(--secondary-color);
 padding-bottom: 2px;
 }
+
 .total{
 padding-top: 2px;
 padding-bottom: 2px;
