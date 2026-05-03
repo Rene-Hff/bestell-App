@@ -15,7 +15,7 @@ function getBasketTemplate(indexBasket){
             <Button id="minusBtn" onclick="decreaseBasketButton(${indexBasket})"> - </button>
                 <span id="bas_dish_amnt">${basketDishes[indexBasket].amount}</span>
             <button id="plusBtn" onclick="increaseBasketButton(${indexBasket})"> + </button>
-            <button id="delBtn" onclick="deleteBtn(${indexBasket})">X</button>
+            <button id="delBtn" onclick="deleteBtn(${indexBasket})"><img class="trash_icon" src="/icons+imgs/delete.svg" alt="trash_icon"></button>
         </div>`
 }
 function getCheckOutTemplate(){

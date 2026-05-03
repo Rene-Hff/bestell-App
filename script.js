@@ -3,10 +3,18 @@ let basketSum;
 let total;
 let delPrice = "5";
 
-function renderMenu(){
+function init(index){
+renderMenu("BurgerSandwiches");
+renderMenu("Pizza");
+renderMenu("Salad");
+}
+
+
+
+function renderMenu(key){
     let contentRef = document.getElementById("content_category")
         contentRef.innerHTML = "";
-    for(let index = 0; index < myDishes.length; index++){        
+    for(let index = 0; index < myDishes[key].length; index++){        
         contentRef.innerHTML += getMenuTemplate(index);
     }
         renderEmptyBasket();

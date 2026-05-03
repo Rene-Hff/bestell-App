@@ -1,7 +1,6 @@
 .basket_stickyrail{
 width: 300px;
 flex-grow: 1;
-background-color: var(--primary-background-color);
 }
 
 .basket_content{
@@ -39,30 +38,33 @@ padding: 16px;
 }
 
 #bas_dish_nme{
-background-color:var(--primary-background-color);
+background-color: var(--box-background-color);
 color: var(--primary-color);
 padding: 4px;
 width: 100%;
+border-radius: 6px 6px 0px 0px ;
 }
 
 #bas_dish_prce{
-background-color: var(--primary-background-color);
+background-color: var(--box-background-color);
 color: var(--primary-color);
 padding: 4px;
 width: 100%;
 }
 
 #bas_dish_btns{
-background-color: var(--primary-background-color);
+background-color: var(--box-background-color);
 color: var(--primary-color);
 padding: 4px;
 width: 100%;
 margin-bottom: 8px;
+border-radius: 0px 0px 6px 6px ;
 }
 
 #delBtn{
 cursor: pointer;
 background-color: var(--box-background-color);
+border: none;
 }
 
 #payBtn{

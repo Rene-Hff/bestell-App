@@ -1,5 +1,7 @@
 let myDishes = [
     {
+     "BurgerSandwiches": [
+    {
         "name": "Veggie mushroom black burger",
         "price": 16.90,
         "ingredients": "Mixed green salad, Tomatoes, Edamame",
@@ -22,7 +24,11 @@ let myDishes = [
         "price": 15.90,
         "ingredients":"Chicken, Cheese, Tomatoes, Lettuce, Onion, Bell pepper",
         "amount": 0,
-    },
+    }
+     ]
+      },
+    {
+    "Pizza": [
         {
         "name":"Pizza Margherita",
         "price": 11.90,
@@ -46,7 +52,11 @@ let myDishes = [
         "price": 15.90,
         "ingredients":"Chicken, Mozzarella, Gorgonzola, Fontina, Parmigiano Reggiano",
         "amount": 0,
-    },
+    }
+     ]
+      },
+    { 
+    "Salad": [
         {
         "name":"Warm beef arugula salad",
         "price": 16.90,
@@ -54,7 +64,6 @@ let myDishes = [
         "amount": 0,
     },
         {
-        "name":"Mini green Salad",
         "price":7.90,
         "ingredients":"Green salad, Cucumber, Carrots, Parsley, Redishes",
         "amount": 0,
@@ -71,6 +80,8 @@ let myDishes = [
         "ingredients":"Green salad, Cherry tomatoes, Cucumber, Baby spinach, Edamame, Radishes, Bittercress, Tofu, Peanuts",
         "amount":0,
     }
+     ]
+      }
 ]
 
 let basketDishes = [];
