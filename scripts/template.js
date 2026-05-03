@@ -1,9 +1,9 @@
 function getMenuTemplate(index){
     return`
     <div class="singleDishMainMenu">
-        <div class="content_menu">${myDishes[index].name}</div>
-        <div class="content_menu">${myDishes[index].price.toFixed(2)}€</div>
-        <div class="content_menu">${myDishes[index].ingredients}</div>
+        <div class="content_menu">${myDishes[index].category.name}</div>
+        <div class="content_menu">${myDishes[index].category.price.toFixed(2)}€</div>
+        <div class="content_menu">${myDishes[index].category.ingredients}</div>
     <button id="addBtn" onclick="addToCart(${index})">Add to cart</button>
     </div>`
 }
