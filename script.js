@@ -4,20 +4,40 @@ let total;
 let delPrice = "5";
 
 function init(){
-renderMenu("burgerSandwiches");
-renderMenu("pizza");
-renderMenu("salad");
+renderBurger();
+renderPizza();
+renderSalad();
 }
 
-
-
-function renderMenu(category){
-    let contentRef = document.getElementById("content_category")
+function renderBurger(index){
+    let contentRef = document.getElementById("burger_sandwiches_wrapper")
         contentRef.innerHTML = "";
-    for(let index = 0; index < myDishes[index].category.length; index++){        
+    for(let index = 0; index < myDishes.length; index++){          
+        if(myDishes[index].category == "Burger&Sandwiches"){
         contentRef.innerHTML += getMenuTemplate(index);
+        }
     }
-        renderEmptyBasket();
+    renderEmptyBasket();
+}
+function renderPizza(index){
+    let contentRef = document.getElementById("pizza_wrapper")
+        contentRef.innerHTML = "";
+    for(let index = 0; index < myDishes.length; index++){          
+        if(myDishes[index].category == "Pizza"){
+        contentRef.innerHTML += getMenuTemplate(index);
+        }
+    }
+    renderEmptyBasket();
+}
+function renderSalad(index){
+    let contentRef = document.getElementById("salad_wrapper")
+        contentRef.innerHTML = "";
+    for(let index = 0; index < myDishes.length; index++){          
+        if(myDishes[index].category == "Salad"){
+        contentRef.innerHTML += getMenuTemplate(index);
+        }
+    }
+    renderEmptyBasket();
 }
 
 function renderEmptyBasket(){
