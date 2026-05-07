@@ -33,46 +33,55 @@ justify-content: center;
 margin: auto;
 max-width: 1440px;
 display: flex;
-flex-direction: row;
 }
+
 .content_restaurant_titlebox{
 display: flex;
 align-items: baseline;
 justify-content: center;
 padding-top: 56px;
 }
+
 .title_of_restaurant{
 display: flex;
 align-items: center;
 justify-content: center;
 padding-bottom: 56px;
 }
+
 .h1_house{
 margin-right: 12px ;
 }
+
 .h1_burger{
 color: var(--section-bg-color);
 }
+
 .content_restaurant{
-width: 100%;
+width: calc(100% - 300px);
 display: flex;
 flex-direction: column;
+align-items: center;
 }
+
 .section_headline{
+padding-left: 32px;
+width: 1440px;
+margin: auto;
 background-color: var(--section-bg-color);
 color: var(--secondary-color);
 }
-.content_restaurant_category{
-width: 720px;
-padding: 16px;
+
+#burger_sandwiches_wrapper, #pizza_wrapper, #salad_wrapper{
+padding-top: 16px;
+width: 700px;
 }
 
 .singleDishMainMenu{
 display: flex;
 height: auto;
 padding: 8px;
-justify-content: flex-end;
-align-items: center;
+justify-content: center;
 width: 100%;
 border: none;
 background-color: var(--box-background-color);
@@ -81,15 +90,20 @@ border-radius: 6px;
 }
 
 .content_menu{
+display: flex;
+flex-direction: column;
 width: auto;
-flex: 1;
+padding: 8px;
 }
-
+.img_menu{
+width: 200px;
+height: 120px;
+}
 #addBtn{
 cursor: pointer;
 border: none;
-border-radius: 6px;
-margin: 4px;
+border-radius: 12px;
+margin: 2px;
 background-color: var(--btn-color);
 }
 

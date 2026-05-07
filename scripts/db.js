@@ -6,6 +6,7 @@ let myDishes = [
             "price": 16.90,
             "ingredients": "Mixed green salad, Tomatoes, Edamame",
             "amount": 0,
+
             },
             {
             "category": "Burger&Sandwiches",
@@ -87,3 +88,17 @@ let myDishes = [
 ]
 
 let basketDishes = [];
+
+let menuImgs = ["./icons+imgs/Rectangle1.svg",
+"./icons+imgs/Rectangle2.svg",
+"./icons+imgs/Rectangle3.svg",
+"./icons+imgs/Rectangle4.svg",
+"./icons+imgs/Rectangle5.svg",
+"./icons+imgs/Rectangle6.svg",
+"./icons+imgs/Rectangle7.svg",
+"./icons+imgs/Rectangle8.svg",
+"./icons+imgs/Rectangle9.svg",
+"./icons+imgs/Rectangle10.svg",
+"./icons+imgs/Rectangle11.svg",
+"./icons+imgs/Rectangle12.svg",
+];

@@ -2,10 +2,11 @@
 function getMenuTemplate(index){
     return`
     <div class="singleDishMainMenu">
+        <img class="img_menu" src="${menuImgs[index]}">
         <div class="content_menu">${myDishes[index].name}</div>
-        <div class="content_menu">${myDishes[index].price.toFixed(2)}€</div>
         <div class="content_menu">${myDishes[index].ingredients}</div>
-     <button id="addBtn" onclick="addToCart(${index})">Add to cart</button>
+        <div class="content_menu">${myDishes[index].price.toFixed(2)}€ <button id="addBtn" onclick="addToCart(${index})">Add to cart</button>
+        </div>
     </div>`
 }
 function getBasketTemplate(indexBasket){
