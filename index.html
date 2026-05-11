@@ -32,9 +32,9 @@
            <h1 class="h1_burger">Burger</h1><h1 class="h1_house">House</h1><span class="restaurant_rating"><img src="/icons+imgs/star.svg"> 4,1 (317)</span>
     </div>
     <div class="title_of_restaurant">The best of Burgers, Pizza, and Greens, all in one great place.</div>
-<section class="content_total"> <!-- content wrapper-->
+<section class="content_total"> 
 
-    <div class="content_restaurant"> <!-- left side content-->
+    <div class="content_restaurant"> 
         
     <h2 class="section_headline"><img class="headline_icons" src="/icons+imgs/Chanese 1.svg">Burger&Sandwiches</h2>
         <div id="burger_sandwiches_wrapper"></div>
@@ -49,8 +49,13 @@
         <div id="basket_standard" class="basket_content"></div>
         <div id="checkOutContainer"></div>
     </div>
-    <dialog id="dialogMessage">Order confirmed! Your food is on the way!</dialog> 
-</section>                  <!--content wrapper end-->
+    <dialog id="dialogMessage" onclick="closeDialog()">
+        <img src="/icons+imgs/ChatGPT Image Nov 24, 2025, 11_51_33 AM 1.svg" alt="Burger-Bus">
+        <h2>Order confirmed!</h2>
+        <p>Your food is on the way!</p>
+        
+    </dialog> 
+</section>                  
 
 
 <section class="footer">

@@ -8,6 +8,7 @@ overflow:auto;
 }
 
 #basket_standard{
+width: 300px;
 padding: 16px;
 display: flex;
 flex-direction: column;

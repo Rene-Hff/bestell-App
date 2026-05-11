@@ -134,3 +134,7 @@ function deleteBtn(indexBasket){
     basketDishes.splice(indexBasket, 1);
     renderBasketMenu();
 }
+
+function closeDialog(){
+    document.getElementById("dialogMessage").close();
+}

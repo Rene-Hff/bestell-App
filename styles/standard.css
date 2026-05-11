@@ -16,7 +16,7 @@ font-family: 'Palanquin';
 
 .header{
 display: flex;
-justify-content: space-around;
+justify-content: space-between;
 padding: 40px;
 max-width: 1920px;
 height: 128px;
@@ -31,10 +31,12 @@ height: auto;
 display: flex;
 align-items: center;
 justify-content: center;
+flex-direction: column;
 }
 .big_icon_middle{
-position: absolute;
-top: 35%;
+height: auto;
+width: auto;
+margin-top: -160px;
 }
 .content_total{
 margin: auto;
@@ -46,14 +48,14 @@ display: flex;
 display: flex;
 align-items: baseline;
 justify-content: center;
-padding-top: 56px;
+padding-top: 8px;
 }
 
 .title_of_restaurant{
 display: flex;
 align-items: center;
 justify-content: center;
-padding-bottom: 56px;
+padding-bottom: 48px;
 }
 
 .h1_house{
@@ -75,12 +77,11 @@ align-items: center;
 height: 80px;
 }
 .section_headline{
-max-width: 100%;
 display: flex;
 align-items: end;
 padding-left: 32px;
 gap: 24px;
-width: 1440px;
+width: calc(100% + 300px);
 height: 48px;
 margin: auto;
 background-color: var(--section-bg-color);
@@ -110,11 +111,11 @@ font-weight: bold;
 display: flex;
 align-items: center;
 flex-direction: column;
-justify-content: space-between
+justify-content: space-evenly;
 }
 .img_menu{
-width: 200px;
-height: 120px;
+width: fit-content;
+height: fit-content;
 padding-right: 24px;
 }
 #addBtn{
@@ -139,4 +140,71 @@ color: var(--secondary-color);
 .copyright{
 display: flex;
 align-items: center;
+}
+
+@media(max-width: 1024px){
+#burger_sandwiches_wrapper, #pizza_wrapper, #salad_wrapper{
+width: 600px;
+}
+}
+
+@media(max-width: 920px){
+.content_total{
+display: block;
+margin-left: 10px;
+margin-right: 10px;
+}
+.content_restaurant{
+width: 100%;
+}
+.section_headline{
+justify-content: start;
+width: 100%;
+}
+.big_icon_middle{
+width: 150px;
+height: 150px;
+margin-top: -100px;
+}
+}
+@media(max-width: 620px){
+.header{
+justify-content: space-between;
+}
+.singleDishMainMenu{
+flex-direction: column;
+height: auto;
+align-items: center;
+margin-bottom: 40px;
+text-align: center;
+}
+.img_menu{
+padding-right: 0;
+width: 400px;
+}
+#burger_sandwiches_wrapper, #pizza_wrapper, #salad_wrapper{
+width: 100%;
+margin-left: auto;
+margin-right: auto;
+}
+.big_icon_middle{
+width: 120px;
+height: 120px;
+margin-top: -80px;
+}
+.section_headline{
+gap: 2px;
+padding-left: 0;
+}
+}
+@media(max-width: 430px){
+.img_menu{
+padding-right: 0;
+width: 300px;
+}
+.title_of_restaurant{
+text-align: center;
+padding-left: 16px;
+padding-right: 16px;
+}
 }
