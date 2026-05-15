@@ -92,3 +92,8 @@ padding-bottom: 2px;
 padding-top: 2px;
 padding-bottom: 2px;
 }
+@media(max-width: 920px){
+#basket_standard, .checkOutBox{
+display: none;
+}
+}

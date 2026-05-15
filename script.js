@@ -44,7 +44,7 @@ function renderEmptyBasket(){
     let emBasket = document.getElementById("basket_standard")
         emBasket.innerHTML =` <h3>Your Basket</h3>
         <p>Nothing here yet.Go ahead and choose something delicious!</p>
-        <img class="cart_icon" src="/icons+imgs/shopping_cart.svg" alt="cart_icon">`
+        <img class="cart_icon" src="/imagesIcons/shopping_cart.svg" alt="cart_icon">`
 }
 
 function renderBasketMenu(indexBasket){
@@ -129,6 +129,13 @@ function openDialog(){
     renderBasketMenu();
 }
 
+function openMobileBasket(index, indexBasket){
+        let mobDiaRef = document.getElementById("mobileBasketDialog");
+        mobDiaRef.showModal();
+        let mobileBskt = document.getElementById("mobileBasketContent");
+            mobileBskt = renderBasketMenu(indexBasket);
+            return mobileBskt
+}
 
 function deleteBtn(indexBasket){
     basketDishes.splice(indexBasket, 1);
@@ -137,4 +144,7 @@ function deleteBtn(indexBasket){
 
 function closeDialog(){
     document.getElementById("dialogMessage").close();
+}
+function closeMobileBasketDialog(){
+    document.getElementById("mobileBasketDialog").close();
 }
