@@ -24,6 +24,7 @@ margin:auto;
 background-color: var(--section-bg-color);
 }
 .hero{
+width: 1440px;
 max-width: 100%;
 height: auto;
 }
@@ -181,6 +182,7 @@ padding: 4px;
 .icon_basket_btn{
 background-color: var(--primary-color);
 border: none;
+cursor: pointer;
 }
 }
 @media(max-width: 620px){

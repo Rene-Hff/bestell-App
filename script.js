@@ -4,6 +4,7 @@ let total;
 let delPrice = "5";
 
 function init(){
+renderBasketMenu();
 renderBurger();
 renderPizza();
 renderSalad();
@@ -17,7 +18,6 @@ function renderBurger(index){
         contentRef.innerHTML += getMenuTemplate(index);
         }
     }
-    renderEmptyBasket();
 }
 function renderPizza(index){
     let contentRef = document.getElementById("pizza_wrapper")
@@ -27,7 +27,6 @@ function renderPizza(index){
         contentRef.innerHTML += getMenuTemplate(index);
         }
     }
-    renderEmptyBasket();
 }
 function renderSalad(index){
     let contentRef = document.getElementById("salad_wrapper")
@@ -37,17 +36,9 @@ function renderSalad(index){
         contentRef.innerHTML += getMenuTemplate(index);
         }
     }
-    renderEmptyBasket();
 }
 
-function renderEmptyBasket(){
-    let emBasket = document.getElementById("basket_standard")
-        emBasket.innerHTML =` <h3>Your Basket</h3>
-        <p>Nothing here yet.Go ahead and choose something delicious!</p>
-        <img class="cart_icon" src="/imagesIcons/shopping_cart.svg" alt="cart_icon">`
-}
-
-function renderBasketMenu(indexBasket){
+function renderBasketMenu(){
     let basketRef = document.getElementById("basket_standard");
         basketRef.innerHTML = "";
     for(let indexBasket = 0; indexBasket < basketDishes.length; indexBasket++){
@@ -57,17 +48,37 @@ function renderBasketMenu(indexBasket){
         document.getElementById("checkOutContainer").style.display = "block";
     } else{
         document.getElementById("checkOutContainer").style.display = "none";
-        renderEmptyBasket();
+        basketRef.innerHTML =`<h3>Your Basket</h3>
+        <p>Nothing here yet.Go ahead and choose something delicious!</p><img class="cart_icon" src="./imagesIcons/shopping_cart.svg" alt="cart_icon">`
     }
         renderCheckOut();
         renderPrice();
 }
-
 function renderCheckOut(indexBasket){ 
     let checkOut = document.getElementById("checkOutContainer")
         checkOut.innerHTML = getCheckOutTemplate();
 }
-    
+function renderMobileBasketMenu(){
+    let mobileBskt = document.getElementById("mobileBasketContent");
+        mobileBskt.innerHTML = "";
+    for(let indexBasket = 0; indexBasket < basketDishes.length; indexBasket++){
+        mobileBskt.innerHTML += getBasketTemplate(indexBasket);
+    }
+    if(basketDishes.length != 0){
+        document.getElementById("mobileCheckOut").style.display = "block";
+    } else{
+        document.getElementById("mobileCheckOut").style.display = "none";
+        mobileBskt.innerHTML =`<h3>Your Basket</h3>
+        <p>Nothing here yet.Go ahead and choose something delicious!</p><img class="cart_icon" src="./imagesIcons/shopping_cart.svg" alt="cart_icon">`
+    }
+        renderMobileCheckOut();
+        renderPrice();
+}
+
+function renderMobileCheckOut(indexBasket){
+    let mobCheck = document.getElementById("mobileCheckOut");
+        mobCheck.innerHTML = getMobileCheckOutTemplate();
+}
 function renderPrice(){
    basketSum = 0;
     for(let basketIndex = 0; basketIndex < basketDishes.length; basketIndex++){
@@ -124,17 +135,15 @@ function totalPrice(){
 function openDialog(){
     let dialogRef = document.getElementById("dialogMessage");
         dialogRef.showModal();
-    renderEmptyBasket();
         basketDishes = [];
+        closeMobileBasketDialog();
     renderBasketMenu();
 }
 
-function openMobileBasket(index, indexBasket){
+function openMobileBasket(indexBasket){
         let mobDiaRef = document.getElementById("mobileBasketDialog");
         mobDiaRef.showModal();
-        let mobileBskt = document.getElementById("mobileBasketContent");
-            mobileBskt = renderBasketMenu(indexBasket);
-            return mobileBskt
+        renderMobileBasketMenu();
 }
 
 function deleteBtn(indexBasket){
@@ -147,4 +156,5 @@ function closeDialog(){
 }
 function closeMobileBasketDialog(){
     document.getElementById("mobileBasketDialog").close();
+    basketDishes = [];
 }

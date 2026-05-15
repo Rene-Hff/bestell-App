@@ -20,27 +20,27 @@
 <body onload="init()">
 
 <section class="header">
-    <img class="header_logo" src="imagesIcons/Logo 02.svg">
-    <img class="header_burger_menu" src="imagesIcons/dehaze.svg">
+    <img class="header_logo" src="./imagesIcons/Logo 02.svg">
+    <img class="header_burger_menu" src="./imagesIcons/dehaze.svg">
     
 </section>
 <section class="section_hero">
-    <img class="hero" src="imagesIcons/hero.svg">
-    <img class="big_icon_middle" src="/imagesIcons/Ellipse 16.svg">
+    <img class="hero" src="./imagesIcons/hero.svg">
+    <img class="big_icon_middle" src="./imagesIcons/Ellipse 16.svg">
 </section>
     <div class="content_restaurant_titlebox">
-           <h1 class="h1_burger">Burger</h1><h1 class="h1_house">House</h1><span class="restaurant_rating"><img src="/imagesIcons/star.svg"> 4,1 (317)</span>
+           <h1 class="h1_burger">Burger</h1><h1 class="h1_house">House</h1><span class="restaurant_rating"><img src="./imagesIcons/star.svg"> 4,1 (317)</span>
     </div>
     <div class="title_of_restaurant">The best of Burgers, Pizza, and Greens, all in one great place.</div>
 <section class="content_total"> 
 
     <div class="content_restaurant"> 
         
-    <h2 class="section_headline"><img class="headline_icons" src="/imagesIcons/Chanese 1.svg">Burger&Sandwiches</h2>
+    <h2 class="section_headline"><img class="headline_icons" src="./imagesIcons/Chanese 1.svg">Burger&Sandwiches</h2>
         <div id="burger_sandwiches_wrapper"></div>
-    <h2 class="section_headline"><img class="headline_icons" src="/imagesIcons/Pizza 1.svg"> Pizza (30cm)</h2>
+    <h2 class="section_headline"><img class="headline_icons" src="./imagesIcons/Pizza 1.svg"> Pizza (30cm)</h2>
         <div id="pizza_wrapper"></div>
-    <h2 class="section_headline"><img class="headline_icons" src="/imagesIcons/Salad 1.svg"> Salad</h2>
+    <h2 class="section_headline"><img class="headline_icons" src="./imagesIcons/Salad 1.svg"> Salad</h2>
         <div id="salad_wrapper"></div>        
     </div>
 
@@ -50,18 +50,20 @@
     </div>
 
     <div class="resp_basket">
-        <button class="icon_basket_btn"><img class="home_icon"     src="/imagesIcons/home30x30.svg"></button>
-        <button class="icon_basket_btn" onclick="openMobileBasket()"><img class="cart_icon"     src="/imagesIcons/cart30x30.svg"></button>
-        <button class="icon_basket_btn"><img class="fork_icon"     src="/imagesIcons/fork30x30.svg"></button>
-        <button class="icon_basket_btn"><img class="profile_icon"  src="/imagesIcons/profil30x30.svg"></button>
+        <button class="icon_basket_btn"><img class="home_icon"     src="./imagesIcons/home30x30.svg"></button>
+        <button class="icon_basket_btn" onclick="openMobileBasket()"><img class="cart_icon"  src="./imagesIcons/cart30x30.svg"></button>
+        <button class="icon_basket_btn"><img class="fork_icon"     src="./imagesIcons/fork30x30.svg"></button>
+        <button class="icon_basket_btn"><img class="profile_icon"  src="./imagesIcons/profil30x30.svg"></button>
     </div>
 
-    <dialog id="mobileBasketDialog" onclick="closeMobileBasketDialog()">
+    <dialog id="mobileBasketDialog" >
         <div id="mobileBasketContent"></div>
+        <div id="mobileCheckOut"></div>
+        <p class="closeXBtn" onclick="closeMobileBasketDialog()">X</p>
     </dialog>
 
     <dialog id="dialogMessage" onclick="closeDialog()">
-        <img src="/imagesIcons/ChatGPT Image Nov 24, 2025, 11_51_33 AM 1.svg" alt="Burger-Bus">
+        <img src="./imagesIcons/ChatGPT Image Nov 24, 2025, 11_51_33 AM 1.svg" alt="Burger-Bus">
         <h2>Order confirmed!</h2>
         <p>Your food is on the way!</p>
         
@@ -70,7 +72,7 @@
 
 
 <section class="footer">
-    <div class="copyright"><img  src="imagesIcons/copyright.svg">2026 BurgerHouse</div>
+    <div class="copyright"><img  src="./imagesIcons/copyright.svg">2026 BurgerHouse</div>
     <p>Imprint</p>
     <p>Cookie Preferences</p>
 </section>

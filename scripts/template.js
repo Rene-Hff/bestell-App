@@ -16,12 +16,23 @@ function getBasketTemplate(indexBasket){
             <Button id="minusBtn" onclick="decreaseBasketButton(${indexBasket})"> - </button>
                 <span id="bas_dish_amnt">${basketDishes[indexBasket].amount}</span>
             <button id="plusBtn" onclick="increaseBasketButton(${indexBasket})"> + </button>
-            <button id="delBtn" onclick="deleteBtn(${indexBasket})"><img class="trash_icon" src="/imagesIcons/delete.svg" alt="trash_icon"></button>
+            <button id="delBtn" onclick="deleteBtn(${indexBasket})"><img class="trash_icon" src="./imagesIcons/delete.svg" alt="trash_icon"></button>
         </div>`
 }
 function getCheckOutTemplate(){
     return`
     <div class="checkOutBox">
+        <div class="subtotal">Subtotal ${basketSum} €</div>
+        <div class="delFee">Delivery fee +5€</div>
+        <div class="total">Total ${totalPrice()}€</div>
+        <button id="payBtn" onclick="openDialog()">Buy now (${totalPrice()}€)</button>
+    </div>
+    `
+}
+
+function getMobileCheckOutTemplate(){
+    return`
+    <div class="mobilCheckOutBox">
         <div class="subtotal">Subtotal ${basketSum} €</div>
         <div class="delFee">Delivery fee +5€</div>
         <div class="total">Total ${totalPrice()}€</div>
