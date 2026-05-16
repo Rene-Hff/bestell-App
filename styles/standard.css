@@ -90,7 +90,6 @@ color: var(--secondary-color);
 }
 
 #burger_sandwiches_wrapper, #pizza_wrapper, #salad_wrapper{
-padding-top: 16px;
 width: 700px;
 }
 
@@ -102,6 +101,7 @@ width: 100%;
 border: none;
 background-color: var(--box-background-color);
 margin-bottom: 16px;
+margin-top: 16px;
 border-radius: 6px;
 }
 .content_menu_description{
@@ -156,6 +156,9 @@ width: 600px;
 }
 
 @media(max-width: 920px){
+.header_burger_menu, .header_logo{
+height: 40px;
+}
 .content_total{
 display: block;
 margin-left: 0px;
@@ -175,9 +178,14 @@ margin-top: -100px;
 }
 .resp_basket{
 display: flex;
+position: sticky;
+bottom: 0;
 justify-content: space-around;
 height: 40px;
 padding: 4px;
+}
+.orange{
+background-color: var(--section-bg-color);
 }
 .icon_basket_btn{
 background-color: var(--primary-color);
@@ -198,12 +206,13 @@ text-align: center;
 }
 .img_menu{
 padding-right: 0;
-width: 400px;
 }
 #burger_sandwiches_wrapper, #pizza_wrapper, #salad_wrapper{
 width: 100%;
 margin-left: auto;
 margin-right: auto;
+padding-left: 16px;
+padding-right: 16px;
 }
 .big_icon_middle{
 width: 120px;
@@ -214,14 +223,20 @@ margin-top: -80px;
 gap: 2px;
 padding-left: 0;
 }
+#addBtn{
+width: 200px;
+height: 32px;
+}
 .footer{
 justify-content: space-between;
 }
 }
 @media(max-width: 430px){
+.header_burger_menu, .header_logo{
+height: 32px;
+}
 .img_menu{
 padding-right: 0;
-width: 300px;
 }
 .title_of_restaurant{
 text-align: center;

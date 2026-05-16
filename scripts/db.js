@@ -89,16 +89,16 @@ let myDishes = [
 
 let basketDishes = [];
 
-let menuImgs = ["./imagesIcons/Rectangle1.svg",
-"./imagesIcons/Rectangle2.svg",
-"./imagesIcons/Rectangle3.svg",
-"./imagesIcons/Rectangle4.svg",
-"./imagesIcons/Rectangle5.svg",
-"./imagesIcons/Rectangle6.svg",
-"./imagesIcons/Rectangle7.svg",
-"./imagesIcons/Rectangle8.svg",
-"./imagesIcons/Rectangle9.svg",
-"./imagesIcons/Rectangle10.svg",
-"./imagesIcons/Rectangle11.svg",
-"./imagesIcons/Rectangle12.svg",
+let menuImgs = ["./imagesIcons/Rectangle1png.png",
+"./imagesIcons/Rectangle2png.png",
+"./imagesIcons/Rectangle3png.png",
+"./imagesIcons/Rectangle4png.png",
+"./imagesIcons/Rectangle5png.png",
+"./imagesIcons/Rectangle6png.png",
+"./imagesIcons/Rectangle7png.png",
+"./imagesIcons/Rectangle8png.png",
+"./imagesIcons/Rectangle9png.png",
+"./imagesIcons/Rectangle10png.png",
+"./imagesIcons/Rectangle11png.png",
+"./imagesIcons/Rectangle12png.png",
 ];

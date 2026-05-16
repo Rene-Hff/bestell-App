@@ -58,7 +58,7 @@ function renderCheckOut(indexBasket){
     let checkOut = document.getElementById("checkOutContainer")
         checkOut.innerHTML = getCheckOutTemplate();
 }
-function renderMobileBasketMenu(){
+function renderMobileBasketMenu(indexBasket){
     let mobileBskt = document.getElementById("mobileBasketContent");
         mobileBskt.innerHTML = "";
     for(let indexBasket = 0; indexBasket < basketDishes.length; indexBasket++){
@@ -92,6 +92,7 @@ function increaseBasketButton(indexBasket){
     if(basketDishes) basketDishes[indexBasket].amount++;
         renderPrice();
         renderBasketMenu();
+        renderMobileBasketMenu();
 }
 
 function decreaseBasketButton(indexBasket){
@@ -101,6 +102,7 @@ function decreaseBasketButton(indexBasket){
     else if(basketDishes) basketDishes[indexBasket].amount--;
         renderPrice();
         renderBasketMenu();
+        renderMobileBasketMenu();
 }
 
 function addToCart(index){
@@ -114,7 +116,10 @@ function addToCart(index){
         "name" : myDishes[index].name,
         "price": myDishes[index].price.toFixed(2),
         "amount": 1,
-    })} 
+    })}
+    if(basketDishes.length !=0){
+        document.getElementById("cart-icon").classList.add("orange");
+    }
         renderPrice();
         renderBasketMenu();
 }
@@ -137,24 +142,26 @@ function openDialog(){
         dialogRef.showModal();
         basketDishes = [];
         closeMobileBasketDialog();
-    renderBasketMenu();
+        renderBasketMenu();
 }
 
 function openMobileBasket(indexBasket){
         let mobDiaRef = document.getElementById("mobileBasketDialog");
         mobDiaRef.showModal();
-        renderMobileBasketMenu();
+        renderMobileBasketMenu(indexBasket);
 }
 
 function deleteBtn(indexBasket){
-    basketDishes.splice(indexBasket, 1);
-    renderBasketMenu();
+        basketDishes.splice(indexBasket, 1);
+        renderBasketMenu();
+        renderMobileBasketMenu();
 }
 
 function closeDialog(){
-    document.getElementById("dialogMessage").close();
+        document.getElementById("dialogMessage").close();
 }
 function closeMobileBasketDialog(){
-    document.getElementById("mobileBasketDialog").close();
-    basketDishes = [];
+        document.getElementById("mobileBasketDialog").close();
+        basketDishes = [];
+        document.getElementById("cart-icon").classList.remove("orange");
 }
