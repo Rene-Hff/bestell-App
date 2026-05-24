@@ -1,13 +1,14 @@
 
-function getMenuTemplate(index){
+function getMenuTemplate(index, btnAmount){
     return`
     <div class="singleDishMainMenu">
         <img class="img_menu" src="${menuImgs[index]}">
         <div class="content_menu_description"> <h3 class="content_menu">${myDishes[index].name}</h3> ${myDishes[index].ingredients}</div>
-        <div class="content_menu_price_btn">${myDishes[index].price.toFixed(2)}€ <button id="addBtn" onclick="addToCart(${index})">Add to cart</button>
+        <div class="content_menu_price_btn">${myDishes[index].price.toFixed(2)}€ <button class="addButtons" id="addBtn${index}" onclick="addToCart(${index})"> Add </button>
         </div>
     </div>`
 }
+
 function getBasketTemplate(indexBasket){
     return`
         <div id="bas_dish_nme">${basketDishes[indexBasket].name}</div>

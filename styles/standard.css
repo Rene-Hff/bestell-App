@@ -13,15 +13,19 @@ margin: 0;
 scroll-behavior: smooth;
 font-family: 'Palanquin';
 }
-
 .header{
+height: 128px;
+background-color: var(--section-bg-color);
+}
+.logos{
 display: flex;
 justify-content: space-between;
-padding: 40px;
-max-width: 1920px;
-height: 128px;
-margin:auto;
-background-color: var(--section-bg-color);
+max-width: 1440px;
+width: 100%;
+margin: auto;
+padding-top: 40px;
+padding-left: 16px;
+padding-right: 16px;
 }
 .hero{
 width: 1440px;
@@ -112,21 +116,21 @@ font-weight: bold;
 display: flex;
 align-items: center;
 flex-direction: column;
-justify-content: space-evenly;
+justify-content: space-between;
 }
 .img_menu{
 width: fit-content;
 height: fit-content;
 padding-right: 24px;
 }
-#addBtn{
+.addButtons{
 cursor: pointer;
 border: none;
 border-radius: 12px;
 margin: 2px;
 background-color: var(--btn-color);
 }
-#addBtn:hover{
+.addButtons:hover{
 color: var(--section-bg-color);
 }
 .resp_basket{
@@ -138,7 +142,6 @@ display: flex;
 justify-content: space-evenly;
 align-items: center;
 padding: 40px;
-max-width: 1920px;
 height: 128px;
 margin:auto;
 background-color: var(--section-bg-color);
@@ -194,9 +197,6 @@ cursor: pointer;
 }
 }
 @media(max-width: 620px){
-.header{
-justify-content: space-between;
-}
 .singleDishMainMenu{
 flex-direction: column;
 height: auto;

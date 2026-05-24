@@ -13,8 +13,10 @@ padding: 16px;
 display: flex;
 flex-direction: column;
 align-items: center;
-justify-content: center;
 border-radius: 6px 0px 0px 0px;
+}
+.cart_icon{
+padding-top: 40px;
 }
 #mobileBasketContent{
 text-align: center;
@@ -102,6 +104,7 @@ padding-bottom: 2px;
 }
 .closeXBtn{
 cursor: pointer;
+margin-left: auto;
 }
 @media(max-width: 920px){
 #basket_standard, .checkOutBox{
