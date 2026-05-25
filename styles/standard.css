@@ -100,7 +100,7 @@ width: 700px;
 .singleDishMainMenu{
 display: flex;
 height: 140px;
-padding: 8px;
+padding: 4px;
 width: 100%;
 border: none;
 background-color: var(--box-background-color);
@@ -121,13 +121,12 @@ justify-content: space-between;
 .img_menu{
 width: fit-content;
 height: fit-content;
-padding-right: 24px;
+padding-right: 8px;
 }
 .addButtons{
 cursor: pointer;
 border: none;
 border-radius: 12px;
-margin: 2px;
 background-color: var(--btn-color);
 }
 .addButtons:hover{
@@ -223,9 +222,10 @@ margin-top: -80px;
 gap: 2px;
 padding-left: 0;
 }
-#addBtn{
+.addButtons{
 width: 200px;
 height: 32px;
+font-weight: bold;
 }
 .footer{
 justify-content: space-between;

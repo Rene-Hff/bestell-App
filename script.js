@@ -108,7 +108,7 @@ function addToCart(index){
         "name" : myDishes[index].name,
         "price": myDishes[index].price.toFixed(2),
         "amount": 1,
-    })}
+    })} 
         renderPrice();
         renderBasketMenu();
         renderMenuBtns(index, checkBasketAmount(index));
@@ -148,6 +148,7 @@ function openDialog(){
         basketDishes = [];
         closeMobileBasketDialog();
         renderBasketMenu();
+        
 }
 
 function openMobileBasket(indexBasket){
@@ -165,7 +166,9 @@ function deleteBtn(indexBasket){
 
 function closeDialog(){
         document.getElementById("dialogMessage").close();
+        init();
 }
 function closeMobileBasketDialog(){
         document.getElementById("mobileBasketDialog").close();
+        init();
 }
