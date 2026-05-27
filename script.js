@@ -7,7 +7,6 @@ let contentRef;
 function init(){
 renderBasketMenu();
 renderAllDishes();
-
 }
 function renderAllDishes(){
     contentBurgerRef = document.getElementById("burger_sandwiches_wrapper");
@@ -28,7 +27,7 @@ function renderAllDishes(){
         }
     }
 }
-function renderBasketMenu(){
+function renderBasketMenu(indexBasket){
     let basketRef = document.getElementById("basket_standard");
         basketRef.innerHTML = "";
     for(let indexBasket = 0; indexBasket < basketDishes.length; indexBasket++){
@@ -112,6 +111,7 @@ function addToCart(index){
         renderPrice();
         renderBasketMenu();
         renderMenuBtns(index, checkBasketAmount(index));
+        checkCartBadge();
 }
 
 function checkBasketAmount(index){
@@ -121,6 +121,15 @@ function checkBasketAmount(index){
         return btnAmount;
     } else {
         return ``;
+    }
+}
+function checkCartBadge(){
+    if(basketDishes){    
+        document.getElementById('active_basket_icon').style.display = "flex";
+        document.getElementById('standard_basket_icon').style.display = "none";
+    } else{
+        document.getElementById('standard_basket_icon').style.display = "flex";
+        document.getElementById('active_basket_icon').style.display = "none";    
     }
 }
 function renderMenuBtns(index, btnAmount){
@@ -148,7 +157,6 @@ function openDialog(){
         basketDishes = [];
         closeMobileBasketDialog();
         renderBasketMenu();
-        
 }
 
 function openMobileBasket(indexBasket){
@@ -170,5 +178,7 @@ function closeDialog(){
 }
 function closeMobileBasketDialog(){
         document.getElementById("mobileBasketDialog").close();
+        document.getElementById('standard_basket_icon').style.display = "flex";
+        document.getElementById('active_basket_icon').style.display = "none";   
         init();
 }
