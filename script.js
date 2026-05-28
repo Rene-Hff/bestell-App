@@ -8,6 +8,7 @@ function init(){
 renderBasketMenu();
 renderAllDishes();
 }
+
 function renderAllDishes(){
     contentBurgerRef = document.getElementById("burger_sandwiches_wrapper");
     contentPizzaRef = document.getElementById("pizza_wrapper");
@@ -27,15 +28,16 @@ function renderAllDishes(){
         }
     }
 }
+
 function renderBasketMenu(indexBasket){
     let basketRef = document.getElementById("basket_standard");
         basketRef.innerHTML = "";
     for(let indexBasket = 0; indexBasket < basketDishes.length; indexBasket++){
         basketRef.innerHTML += getBasketTemplate(indexBasket);
     }
-    if(basketDishes.length != 0){
+    if (basketDishes.length != 0){
         document.getElementById("checkOutContainer").style.display = "block";
-    } else{
+    }  else{
         document.getElementById("checkOutContainer").style.display = "none";
         basketRef.innerHTML =`<h3>Your Basket</h3>
         <p>Nothing here yet.Go ahead and choose something delicious!</p>
@@ -44,17 +46,19 @@ function renderBasketMenu(indexBasket){
         renderCheckOut();
         renderPrice();
 }
+
 function renderCheckOut(indexBasket){ 
     let checkOut = document.getElementById("checkOutContainer")
         checkOut.innerHTML = getCheckOutTemplate();
 }
+
 function renderMobileBasketMenu(indexBasket){
     let mobileBskt = document.getElementById("mobileBasketContent");
         mobileBskt.innerHTML = "";
-    for(let indexBasket = 0; indexBasket < basketDishes.length; indexBasket++){
+    for (let indexBasket = 0; indexBasket < basketDishes.length; indexBasket++){
         mobileBskt.innerHTML += getBasketTemplate(indexBasket);
     }
-    if(basketDishes.length != 0){
+    if (basketDishes.length != 0){
         document.getElementById("mobileCheckOut").style.display = "block";
     } else{
         document.getElementById("mobileCheckOut").style.display = "none";
@@ -62,14 +66,15 @@ function renderMobileBasketMenu(indexBasket){
         <p>Nothing here yet.Go ahead and choose something delicious!</p>
         <img class="cart_icon" src="./imagesIcons/shopping_cart.svg" alt="cart_icon">`
     }
-        renderMobileCheckOut();
-        renderPrice();
+    renderMobileCheckOut();
+    renderPrice();
 }
 
 function renderMobileCheckOut(indexBasket){
     let mobCheck = document.getElementById("mobileCheckOut");
         mobCheck.innerHTML = getMobileCheckOutTemplate();
 }
+
 function renderPrice(){
    basketSum = 0;
     for(let basketIndex = 0; basketIndex < basketDishes.length; basketIndex++){
@@ -78,6 +83,7 @@ function renderPrice(){
     }
     basketSum = basketSum.toFixed(2);
 }
+
 function increaseBasketButton(indexBasket){
     if(basketDishes) basketDishes[indexBasket].amount++;
         renderPrice();
@@ -123,6 +129,7 @@ function checkBasketAmount(index){
         return ``;
     }
 }
+
 function checkCartBadge(){
     if(basketDishes){    
         document.getElementById('active_basket_icon').style.display = "flex";
@@ -131,7 +138,15 @@ function checkCartBadge(){
         document.getElementById('standard_basket_icon').style.display = "flex";
         document.getElementById('active_basket_icon').style.display = "none";    
     }
+    renderCountCartAmount(basketDishes.length);
 }
+
+function renderCountCartAmount(iconAmount){
+    let iconAmountRef = document.getElementById('active_ellipse');
+        iconAmountRef.innerHTML = iconAmount;
+}
+
+
 function renderMenuBtns(index, btnAmount){
     let addButton = document.getElementById('addBtn'+index);
         addButton.innerHTML = btnAmount;
@@ -167,7 +182,7 @@ function openMobileBasket(indexBasket){
 
 function deleteBtn(indexBasket){
         basketDishes.splice(indexBasket, 1);
-        renderPrice();
+        enderPrice();
         renderBasketMenu();
         renderMobileBasketMenu();
 }

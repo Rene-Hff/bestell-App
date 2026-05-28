@@ -111,11 +111,19 @@ height: 26px;
 width: 26px;
 }
 .ellipse_icon{
-height: 15px;
-width: 15px;
+display: flex;
+justify-content: center;
+align-items: center;
+font-weight: bold;
+background-color: var(--primary-background-color);
+height: 20px;
+width: 20px;
 position: absolute;
-margin-top: -10px;
+margin-top: -15px;
 margin-left: 20px;
+color: black;
+border: none;
+border-radius: 50px;
 }
 .active_cart_btn{
 display: none;
@@ -123,6 +131,7 @@ background-color: var(--primary-color);
 border: none;
 padding: 4px;
 }
+
 @media(max-width: 920px){
 #basket_standard, .checkOutBox{
 display: none;
