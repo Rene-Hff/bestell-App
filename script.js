@@ -149,7 +149,7 @@ function renderCountCartAmount(iconAmount){
 
 function renderMenuBtns(index, btnAmount){
     let addButton = document.getElementById('addBtn'+index);
-        addButton.innerHTML = btnAmount;
+        addButton.innerHTML = `Added ${btnAmount}`
     return addButton
 }
 
@@ -182,7 +182,7 @@ function openMobileBasket(indexBasket){
 
 function deleteBtn(indexBasket){
         basketDishes.splice(indexBasket, 1);
-        enderPrice();
+        renderPrice();
         renderBasketMenu();
         renderMobileBasketMenu();
 }
