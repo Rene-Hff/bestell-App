@@ -20,9 +20,8 @@ cursor: pointer;
 display: flex;
 align-items: center;
 flex-direction: column;
-justify-content: space-evenly;
 width: 310px;
-height: 570px;
+height: 100vh;
 top: 50%;
 left: 50%;
 position: fixed;
@@ -36,4 +35,11 @@ box-shadow: 0px 0px 6px 1px var(--section-bg-color);
 #dialogMessage::backdrop{
 background-color: black;
 opacity: 0.9;
+}
+#mobileBasketDialog::backdrop{
+background-color: black;
+opacity: 0.9;
+}
+body:has(#mobileBasketDialog[open]){
+overflow: hidden;
 }

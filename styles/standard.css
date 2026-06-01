@@ -99,7 +99,8 @@ width: 700px;
 
 .singleDishMainMenu{
 display: flex;
-height: 140px;
+align-items: center;
+height: 156px;
 padding: 4px;
 width: 100%;
 border: none;
@@ -116,7 +117,7 @@ font-weight: bold;
 display: flex;
 align-items: center;
 flex-direction: column;
-justify-content: space-between;
+gap: 48px;
 }
 .img_menu{
 width: fit-content;
@@ -124,9 +125,10 @@ height: fit-content;
 padding-right: 8px;
 }
 .addButtons{
+font-size: 16px;
 cursor: pointer;
 border: none;
-border-radius: 12px;
+border-radius: 16px;
 background-color: var(--btn-color);
 }
 .addButtons:hover{
@@ -202,6 +204,10 @@ height: auto;
 align-items: center;
 margin-bottom: 40px;
 text-align: center;
+padding:16px;
+}
+.content_menu_price_btn{
+gap: 16px;
 }
 .img_menu{
 padding-right: 0;

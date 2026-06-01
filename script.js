@@ -32,6 +32,7 @@ function renderAllDishes(){
 function renderBasketMenu(indexBasket){
     let basketRef = document.getElementById("basket_standard");
         basketRef.innerHTML = "";
+        basketRef.innerHTML = `<h3>Your Basket</h3>`;
     for(let indexBasket = 0; indexBasket < basketDishes.length; indexBasket++){
         basketRef.innerHTML += getBasketTemplate(indexBasket);
     }
@@ -55,6 +56,7 @@ function renderCheckOut(indexBasket){
 function renderMobileBasketMenu(indexBasket){
     let mobileBskt = document.getElementById("mobileBasketContent");
         mobileBskt.innerHTML = "";
+        mobileBskt.innerHTML = `<h3>Your Basket</h3>`;
     for (let indexBasket = 0; indexBasket < basketDishes.length; indexBasket++){
         mobileBskt.innerHTML += getBasketTemplate(indexBasket);
     }
@@ -84,14 +86,18 @@ function renderPrice(){
     basketSum = basketSum.toFixed(2);
 }
 
-function increaseBasketButton(indexBasket){
+function increaseBasketButton(indexBasket, index, btnAmount){
+    let foundMenuDish = myDishes.find((dish) => dish.name == basketDishes[indexBasket].name);
     if(basketDishes) basketDishes[indexBasket].amount++;
+    if(foundMenuDish) btnAmount = basketDishes[indexBasket].amount;
+        index = myDishes.indexOf(foundMenuDish);
         renderPrice();
         renderBasketMenu();
         renderMobileBasketMenu();
+        renderMenuBtns(index, btnAmount);
 }
 
-function decreaseBasketButton(indexBasket, index){
+function decreaseBasketButton(indexBasket){
     if(basketDishes[indexBasket].amount ==1 && decreaseBasketButton) {
         deleteBtn(indexBasket);
     }
@@ -99,6 +105,7 @@ function decreaseBasketButton(indexBasket, index){
         renderPrice();
         renderBasketMenu();
         renderMobileBasketMenu();
+
 }
 
 function addToCart(index){
@@ -120,7 +127,7 @@ function addToCart(index){
         checkCartBadge();
 }
 
-function checkBasketAmount(index){
+function checkBasketAmount(index, btnAmount){
     let foundDish = basketDishes.find((dish) => dish.name == myDishes[index].name);
     if(foundDish){
         btnAmount = foundDish.amount;
@@ -149,7 +156,7 @@ function renderCountCartAmount(iconAmount){
 
 function renderMenuBtns(index, btnAmount){
     let addButton = document.getElementById('addBtn'+index);
-        addButton.innerHTML = `Added ${btnAmount}`
+        addButton.innerHTML = ` Added ${btnAmount} `
     return addButton
 }
 
@@ -180,7 +187,7 @@ function openMobileBasket(indexBasket){
         renderMobileBasketMenu(indexBasket);
 }
 
-function deleteBtn(indexBasket){
+function deleteBtn(indexBasket, index){
         basketDishes.splice(indexBasket, 1);
         renderPrice();
         renderBasketMenu();
