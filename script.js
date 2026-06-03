@@ -97,15 +97,20 @@ function increaseBasketButton(indexBasket, index, btnAmount){
         renderMenuBtns(index, btnAmount);
 }
 
-function decreaseBasketButton(indexBasket){
-    if(basketDishes[indexBasket].amount ==1 && decreaseBasketButton) {
+function decreaseBasketButton(indexBasket, index, btnAmount){
+    let foundMenuDish = myDishes.find((dish) => dish.name == basketDishes[indexBasket].name);
+    if (basketDishes[indexBasket].amount ==1 && decreaseBasketButton) {
         deleteBtn(indexBasket);
+        renderMenuBtns(index, btnAmount);
+        // btnAmount ist ab hier undefined weil dish nicht mehr in basket, somit kann kein undifined übergeben werden und ein fehler wird ausgegeben
     }
-    else if(basketDishes) basketDishes[indexBasket].amount--;
+    if(basketDishes) basketDishes[indexBasket].amount--;
+    if(foundMenuDish) btnAmount = basketDishes[indexBasket].amount;
+        index = myDishes.indexOf(foundMenuDish);
         renderPrice();
         renderBasketMenu();
         renderMobileBasketMenu();
-
+        renderMenuBtns(index, btnAmount);
 }
 
 function addToCart(index){
@@ -137,7 +142,7 @@ function checkBasketAmount(index, btnAmount){
     }
 }
 
-function checkCartBadge(){
+function checkCartBadge(indexBasket){
     if(basketDishes){    
         document.getElementById('active_basket_icon').style.display = "flex";
         document.getElementById('standard_basket_icon').style.display = "none";
@@ -145,10 +150,10 @@ function checkCartBadge(){
         document.getElementById('standard_basket_icon').style.display = "flex";
         document.getElementById('active_basket_icon').style.display = "none";    
     }
-    renderCountCartAmount(basketDishes.length);
+    renderCountCartAmount(basketDishes[indexBasket].amount);
 }
 
-function renderCountCartAmount(iconAmount){
+function renderCountCartAmount(iconAmount, basketDishes){
     let iconAmountRef = document.getElementById('active_ellipse');
         iconAmountRef.innerHTML = iconAmount;
 }
