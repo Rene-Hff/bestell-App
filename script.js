@@ -212,6 +212,7 @@ function closeDialog(){
 function closeMobileBasketDialog(){
         document.getElementById("mobileBasketDialog").close();
         document.getElementById('standard_basket_icon').style.display = "flex";
-        document.getElementById('active_basket_icon').style.display = "none";   
+        document.getElementById('active_basket_icon').style.display = "none";
+        basketDishes = [];
         init();
 }
