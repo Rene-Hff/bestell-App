@@ -186,6 +186,8 @@ function openDialog(){
         basketDishes = [];
         closeMobileBasketDialog();
         renderBasketMenu();
+        document.getElementById('active_basket_icon').style.display = "none";
+        document.getElementById('standard_basket_icon').style.display = "flex";
 }
 
 function openMobileBasket(indexBasket){
@@ -209,10 +211,9 @@ function closeDialog(){
         init();
 }
 
-function closeMobileBasketDialog(){
+function closeMobileBasketDialog(iconAmount){
         document.getElementById("mobileBasketDialog").close();
         document.getElementById('standard_basket_icon').style.display = "flex";
         document.getElementById('active_basket_icon').style.display = "none";
-        basketDishes = [];
-        init();
+        checkCartBadge(iconAmount);
 }
