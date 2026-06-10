@@ -51,24 +51,6 @@
         <div id="checkOutContainer"></div>
     </div>
 
-    <div class="resp_basket">
-        <button class="icon_basket_btn"><img class="home_icon"     src="./imagesIcons/home30x30.svg"></button>
-
-        <button id="standard_basket_icon" class="icon_basket_btn" onclick="openMobileBasket()"><img id="cart-icon"  src="./imagesIcons/cart30x30.svg"></button>
-  
-        <button id="active_basket_icon" class="active_cart_btn" onclick="openMobileBasket()">
-            <div id="active_ellipse" class="ellipse_icon" src="./imagesIcons/Ellipse 17.svg"></div>
-            <img class="cart_icon_active" src="./imagesIcons/orange-shopping_cart.svg">
-        </button>
-
-            
-                
-        
-    
-        <button class="icon_basket_btn"><img class="fork_icon"     src="./imagesIcons/fork30x30.svg"></button>
-        <button class="icon_basket_btn"><img class="profile_icon"  src="./imagesIcons/profil30x30.svg"></button>
-    </div>
-
     <dialog id="mobileBasketDialog" >
         <p class="closeXBtn" onclick="closeMobileBasketDialog()">X</p>
         <div id="mobileBasketContent"></div>
@@ -85,12 +67,25 @@
     </dialog> 
 </section>                  
 
-
 <section class="footer">
     <div class="copyright"><img  src="./imagesIcons/copyright.svg">2026 BurgerHouse</div>
     <p>Imprint</p>
     <p>Cookie Preferences</p>
 </section>
+<div class="resp_basket">
+        <button class="icon_basket_btn"><img class="home_icon"     src="./imagesIcons/home30x30.svg"></button>
+
+        <button class="icon_basket_btn"><img class="profile_icon"  src="./imagesIcons/profil30x30.svg"></button>
+
+        <button class="icon_basket_btn"><img class="fork_icon"     src="./imagesIcons/fork30x30.svg"></button>
+
+        <button id="standard_basket_icon" class="icon_basket_btn" onclick="openMobileBasket()"><img id="cart-icon"  src="./imagesIcons/cart30x30.svg"></button>
+  
+        <button id="active_basket_icon" class="active_cart_btn" onclick="openMobileBasket()">
+            <div id="active_ellipse" class="ellipse_icon" src="./imagesIcons/Ellipse 17.svg"></div>
+            <img class="cart_icon_active" src="./imagesIcons/orange-shopping_cart.svg">
+        </button>
+    </div>
     
 </body>
 </html>

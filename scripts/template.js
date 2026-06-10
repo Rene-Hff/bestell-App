@@ -41,3 +41,10 @@ function getMobileCheckOutTemplate(){
     </div>
     `
 }
+function getEmptyBasketTemplate(indexBasket){
+    return `
+        <h3>Your Basket</h3>
+        <p>Nothing here yet.Go ahead and choose something delicious!</p>
+        <img class="cart_icon" src="./imagesIcons/shopping_cart.svg" alt="cart_icon">
+    `
+}

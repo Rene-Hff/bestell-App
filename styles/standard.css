@@ -1,18 +1,3 @@
-:root{
---primary-color: rgb(44, 40, 40);
---secondary-color: whitesmoke;
---primary-background-color: rgb(241, 231, 192);
---section-bg-color: #E76C1F;
---box-background-color: rgb(255, 226, 175);
---btn-color: rgb(248, 240, 227);
-}
-
-*{
-box-sizing: border-box;
-margin: 0;
-scroll-behavior: smooth;
-font-family: 'Palanquin';
-}
 .header{
 height: 128px;
 background-color: var(--section-bg-color);
@@ -185,8 +170,8 @@ display: flex;
 position: sticky;
 bottom: 0;
 justify-content: space-around;
-height: 40px;
-padding: 4px;
+height: 56px;
+padding: 16px;
 }
 .orange{
 background-color: var(--section-bg-color);
