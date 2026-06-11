@@ -8,7 +8,10 @@ function init(){
     renderBasketMenu();
     renderAllDishes();
 }
-
+function renderBaskets(){
+    renderBasketMenu();
+    renderMobileBasketMenu();
+}
 function renderAllDishes(){
     contentBurgerRef = document.getElementById("burger_sandwiches_wrapper");
     contentPizzaRef = document.getElementById("pizza_wrapper");
@@ -79,9 +82,7 @@ function increaseBasketButton(indexBasket, index, btnAmount){
     if(basketDishes) basketDishes[indexBasket].amount++;
     if(foundMenuDish) btnAmount = basketDishes[indexBasket].amount;
         index = myDishes.indexOf(foundMenuDish);
-        renderPrice();
-        renderBasketMenu();
-        renderMobileBasketMenu();
+        renderBaskets();
         renderMenuBtns(index, btnAmount);
 }
 
@@ -90,18 +91,14 @@ function decreaseBasketButton(indexBasket, index, btnAmount){
     if (basketDishes[indexBasket].amount ==1 && decreaseBasketButton) {
         basketDishes.splice(indexBasket, 1);
         index = myDishes.indexOf(foundMenuDish);
-        renderPrice();
-        renderBasketMenu();
-        renderMobileBasketMenu();
+        renderBaskets();
         renderMenuBtns(index, btnAmount);
     }
     else if (foundMenuDish){
         basketDishes[indexBasket].amount--;
         btnAmount = basketDishes[indexBasket].amount;
         index = myDishes.indexOf(foundMenuDish);
-        renderPrice();
-        renderBasketMenu();
-        renderMobileBasketMenu();
+        renderBaskets();
         renderMenuBtns(index, btnAmount);
     }
 }
@@ -110,7 +107,6 @@ function addToCart(index){
     let foundDish = basketDishes.find((dish) => dish.name == myDishes[index].name);
     if(foundDish){
        foundDish.amount++;
-        renderPrice();
         renderBasketMenu();
         renderMenuBtns(index, checkBasketAmount(index));
     } else{
@@ -119,7 +115,6 @@ function addToCart(index){
         "price": myDishes[index].price.toFixed(2),
         "amount": 1,
     })} 
-        renderPrice();
         renderBasketMenu();
         renderMenuBtns(index, checkBasketAmount(index));
         checkCartBadge();
@@ -200,9 +195,7 @@ function deleteBtn(indexBasket, index, btnAmount){
         let foundMenuDish = myDishes.find((dish) => dish.name == basketDishes[indexBasket].name);
         basketDishes.splice(indexBasket, 1);
         index = myDishes.indexOf(foundMenuDish);
-        renderPrice();
-        renderBasketMenu();
-        renderMobileBasketMenu();
+        renderBaskets();
         renderMenuBtns(index, btnAmount);
 }
 
