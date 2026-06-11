@@ -20,6 +20,7 @@ function getBasketTemplate(indexBasket, index){
             <button id="delBtn" onclick="deleteBtn(${indexBasket})"><img class="trash_icon" src="./imagesIcons/delete.svg" alt="trash_icon"></button>
         </div>`
 }
+
 function getCheckOutTemplate(){
     return`
     <div class="checkOutBox">
@@ -41,6 +42,7 @@ function getMobileCheckOutTemplate(){
     </div>
     `
 }
+
 function getEmptyBasketTemplate(indexBasket){
     return `
         <h3>Your Basket</h3>

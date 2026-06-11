@@ -1,150 +1,160 @@
 .basket_content{
-height: 400px;
-position: sticky;
-top: 0;
-background-color: var(--primary-color);
-color: var(--secondary-color);
-overflow:auto;
+    height: 400px;
+    position: sticky;
+    top: 0;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    overflow:auto;
 }
 
 #basket_standard{
-width: 300px;
-padding: 16px;
-display: flex;
-flex-direction: column;
-align-items: center;
-border-radius: 6px 0px 0px 0px;
+    width: 300px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 6px 0px 0px 0px;
 }
+
 .cart_icon{
-padding-top: 40px;
+    padding-top: 40px;
 }
+
 #mobileBasketContent{
-text-align: center;
-width: 240px;
-overflow: auto;
+    text-align: center;
+    width: 240px;
+    overflow: auto;
 }
+
 #checkOutContainer{
-background-color: var(--primary-color);
-position: sticky;
-top: 390px;
-color: var(--secondary-color);
-border-radius: 0px 0px 0px 6px;
+    background-color: var(--primary-color);
+    position: sticky;
+    top: 390px;
+    color: var(--secondary-color);
+    border-radius: 0px 0px 0px 6px;
 }
 
 .checkOutBox{
-display: flex;
-flex-direction: column;
-align-items: center;
-padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
 }
+
 .mobileCheckOutBox{
-display: flex;
-flex-direction: column;
-align-items: center;
-width: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 240px;
 }
+
 #bas_dish_nme{
-background-color: var(--box-background-color);
-color: var(--primary-color);
-padding: 4px;
-width: 100%;
-border-radius: 6px 6px 0px 0px ;
+    background-color: var(--box-background-color);
+    color: var(--primary-color);
+    padding: 4px;
+    width: 100%;
+    border-radius: 6px 6px 0px 0px ;
 }
 
 #bas_dish_prce{
-background-color: var(--box-background-color);
-color: var(--primary-color);
-padding: 4px;
-width: 100%;
+    background-color: var(--box-background-color);
+    color: var(--primary-color);
+    padding: 4px;
+    width: 100%;
 }
 
 #bas_dish_btns{
-background-color: var(--box-background-color);
-color: var(--primary-color);
-padding: 4px;
-width: 100%;
-margin-bottom: 8px;
-border-radius: 0px 0px 6px 6px ;
+    background-color: var(--box-background-color);
+    color: var(--primary-color);
+    padding: 4px;
+    width: 100%;
+    margin-bottom: 8px;
+    border-radius: 0px 0px 6px 6px;
 }
 
 #bas_dish_amnt{
-font-size: 24px;
+    font-size: 24px;
 }
 
 #delBtn{
-cursor: pointer;
-background-color: var(--box-background-color);
-border: none;
+    cursor: pointer;
+    background-color: var(--box-background-color);
+    border: none;
 }
 
 #payBtn{
-width: 100%;
-border: none;
-font-size: 24px;
-border-radius: 30px;
-color: var(--secondary-color);
-background-color: var(--section-bg-color);
+    width: 100%;
+    border: none;
+    font-size: 24px;
+    border-radius: 30px;
+    color: var(--secondary-color);
+    background-color: var(--section-bg-color);
 }
 
 #minusBtn{
-background: none;
-border: none;
-cursor: pointer;
-font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
 }
 
 #plusBtn{
-background: none;
-border: none;
-cursor: pointer;
-font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
 }
 
 .delFee{
-border-bottom: 1px solid var(--secondary-color);
-padding-bottom: 2px;
+    border-bottom: 1px solid var(--secondary-color);
+    padding-bottom: 2px;
 }
 
 .total{
-padding-top: 2px;
-padding-bottom: 2px;
+    padding-top: 2px;
+    padding-bottom: 2px;
 }
+
 .closeXBtn{
-cursor: pointer;
-margin-left: auto;
+    cursor: pointer;
+    margin-left: auto;
 }
+
 #cart-icon{
-height: 30px;
-width: 30px;
+    height: 30px;
+    width: 30px;
 }
+
 .cart_icon_active{
-height: 26px;
-width: 26px;
+    height: 26px;
+    width: 26px;
 }
+
 .ellipse_icon{
-display: flex;
-justify-content: center;
-align-items: center;
-font-weight: bold;
-background-color: var(--primary-background-color);
-height: 20px;
-width: 20px;
-position: absolute;
-margin-top: -15px;
-margin-left: 20px;
-color: black;
-border: none;
-border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    background-color: var(--primary-background-color);
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    margin-top: -15px;
+    margin-left: 20px;
+    color: black;
+    border: none;
+    border-radius: 50px;
 }
+
 .active_cart_btn{
-display: none;
-background-color: var(--primary-color);
-border: none;
-padding: 4px;
+    display: none;
+    background-color: var(--primary-color);
+    border: none;
+    padding: 4px;
 }
 
 @media(max-width: 920px){
 #basket_standard, .checkOutBox{
-display: none;
+    display: none;
 }
 }

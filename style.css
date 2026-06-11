@@ -8,8 +8,8 @@
 }
 
 *{
-box-sizing: border-box;
-margin: 0;
-scroll-behavior: smooth;
-font-family: 'Palanquin';
+    box-sizing: border-box;
+    margin: 0;
+    scroll-behavior: smooth;
+    font-family: 'Palanquin';
 }

@@ -1,45 +1,49 @@
 #dialogMessage[open] {
-display: flex;
-align-items: center;
-flex-direction: column;
-justify-content: space-evenly;
-width: 420px;
-height: 270px;
-top: 50%;
-left: 50%;
-position: fixed;
-translate: -50% -50%;
-border-radius: 8px ;
-background-color: var(--primary-color);
-color: var(--secondary-color);
-border: none;
-box-shadow: 0px 0px 6px 1px white;
-cursor: pointer;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 420px;
+    height: 270px;
+    top: 50%;
+    left: 50%;
+    position: fixed;
+    translate: -50% -50%;
+    border-radius: 8px ;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    box-shadow: 0px 0px 6px 1px white;
+    cursor: pointer;
 }
+
 #mobileBasketDialog[open]{
-display: flex;
-align-items: center;
-flex-direction: column;
-width: 310px;
-height: 100vh;
-top: 50%;
-left: 50%;
-position: fixed;
-translate: -50% -50%;
-border-radius: 8px ;
-background-color: var(--primary-color);
-color: var(--secondary-color);
-border: none;
-box-shadow: 0px 0px 6px 1px var(--section-bg-color);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 310px;
+    height: 100vh;
+    top: 50%;
+    left: 50%;
+    position: fixed;
+    translate: -50% -50%;
+    border-radius: 8px ;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    box-shadow: 0px 0px 6px 1px var(--section-bg-color);
 }
+
 #dialogMessage::backdrop{
-background-color: black;
-opacity: 0.9;
+    background-color: black;
+    opacity: 0.9;
 }
+
 #mobileBasketDialog::backdrop{
-background-color: black;
-opacity: 0.9;
+    background-color: black;
+    opacity: 0.9;
 }
+
 body:has(#mobileBasketDialog[open]){
-overflow: hidden;
+    overflow: hidden;
 }

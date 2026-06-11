@@ -8,10 +8,12 @@ function init(){
     renderBasketMenu();
     renderAllDishes();
 }
+
 function renderBaskets(){
     renderBasketMenu();
     renderMobileBasketMenu();
 }
+
 function renderAllDishes(){
     contentBurgerRef = document.getElementById("burger_sandwiches_wrapper");
     contentPizzaRef = document.getElementById("pizza_wrapper");
