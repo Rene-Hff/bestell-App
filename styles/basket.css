@@ -154,7 +154,7 @@
 }
 
 @media(max-width: 920px){
-#basket_standard, .checkOutBox{
-    display: none;
-}
+    #basket_standard, .checkOutBox{
+        display: none;
+    }
 }
